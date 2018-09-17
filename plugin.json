@@ -1,0 +1,49 @@
+{
+    "version"           : "2.0.9",
+    "name"              : "PrePayment",
+    "marketplaceName"   : {"de":"Vorkasse","en":"Cash in advance"},
+    "license"           : "AGPL-3.0",
+    "pluginIcon"        : "icon_plugin_xs.png",
+    "price"             : 0.00,
+    "description"       : "Cash in advance plugin for plentymarkets online stores",
+    "shortDescription"  : {"de": "Zahlungsart Vorkasse für plentymarkets Webshops","en": "Payment method Cash in advance for plentymarkets online stores"},
+    "categories"        : ["3519"],
+    "author"            : "plentymarkets GmbH",
+    "authorIcon"        : "icon_author_xs.png",
+    "email"             : "sales@plentymarkets.com",
+    "phone"             : "+49 561 98 681 100",
+    "keywords"          : ["cash in advance", "Vorkasse", "official", "plentymarkets", "payment"],
+    "type"              : "payment",
+    "namespace"         : "CashInAdvance",
+    "serviceProvider"   : "CashInAdvance\\Providers\\CashInAdvanceServiceProvider",
+    "javaScriptFiles"   : [],
+    "containers"        : [],
+    "dataProviders"     :
+    [
+        {
+            "key"           :"CashInAdvance\\Providers\\Icon\\IconProvider",
+            "name"          :"Cash in advance icon",
+            "description"   :"Display the icon for this payment method"
+        },
+        {
+            "key"           :"CashInAdvance\\Providers\\CashInAdvanceOrderConfirmationDataProvider",
+            "name"          :"Cash in advance bank details",
+            "description"   :"Display the bank details on the order confirmation page"
+        },
+        {
+            "key"           :"CashInAdvance\\Providers\\ReinitializePayment\\CashInAdvanceReinitializePayment",
+            "name"          :"Cash in advance Reinitialise Payment",
+            "description"   : "Display the Cash in advance Installment Button after the Payment changed to Cash in advance"
+        },
+        {
+            "key"           :"CashInAdvance\\Providers\\ReinitializePayment\\CashInAdvanceReinitializePaymentScript",
+            "name"          :"Cash in advance Reinitialise Payment Script",
+            "description"   :"A Script for displaying the Cash in advance Button after the Payment changed to Cash in advance"
+        }
+    ],
+    "dependencies"      : [],
+    "runOnBuild"        : [
+        "CashInAdvance\\Migrations\\CreateSettings_1_0_0",
+        "CashInAdvance\\Migrations\\CreateSettings_1_1_0"
+    ]
+}

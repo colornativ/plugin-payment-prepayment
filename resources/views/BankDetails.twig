@@ -1,0 +1,29 @@
+{% set bankAccount = config("system.bank") %}
+<hr>
+<div class="row" id="cashinadvanceBankDetails">
+    <div class="col-xs-12 col-sm-5">
+        <strong>{{ trans("PrePayment::PaymentMethod.bankDetails") }}</strong>
+    </div>
+    <div class="col-xs-12 col-sm-7">
+        <table border="0" cellpadding="0" style="width: 100%; border-collapse: collapse; display: block; border: none !important">
+            <tbody>
+                <tr>
+                    <td style="border: none !important">{{ trans("PrePayment::PaymentMethod.bankAccountOwner") }}</td>
+                    <td style="border: none !important">{{ bankAccount["accountOwner"] }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none !important">{{ trans("PrePayment::PaymentMethod.bankName") }}</td>
+                    <td style="border: none !important">{{ bankAccount["name"] }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none !important">{{ trans("PrePayment::PaymentMethod.bankIban") }}</td>
+                    <td style="border: none !important">{{ bankAccount["iban"] }}</td>
+                </tr>
+                <tr>
+                    <td style="border: none !important">{{ trans("PrePayment::PaymentMethod.bankSwift") }}</td>
+                    <td style="border: none !important">{{ bankAccount["swift"] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
